@@ -1,0 +1,44 @@
+'scopeName': 'source.fstar'
+
+'name': 'F*'
+
+'fileTypes': ['fst']
+
+'patterns': [
+  {
+    'name'  : 'keyword.control.fstar'
+    'match' : '\\b(assume|assert|type|let|val|in|if|open|module|sig|fun)\\b'
+  }
+  {
+    'name': 'constant.numeric.integer.decimal.fstar'
+    'match': '\\b([0-9]+)'
+  }
+  {
+    'include': '#comments'
+  }
+]
+
+'repository':
+  'comments':
+    'patterns': [
+      {
+        'name': 'comment.block.fstar'
+        'match': '//.*'
+      }
+      {
+        'name': 'comment.block.fstar'
+        'begin': '\\(\\*'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.begin.fstar'
+        'end': '\\*\\)'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.end.fstar'
+        'patterns': [
+          {
+            'include': '#comments'
+          }
+        ]
+      }
+    ]
