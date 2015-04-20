@@ -7,11 +7,43 @@
 'patterns': [
   {
     'name'  : 'keyword.control.fstar'
-    'match' : '\\b(assume|assert|type|let|val|in|if|open|module|sig|fun)\\b'
+    'match' : '\\b(assume|assert|let|in|if|then|else|fun|rec)\\b'
   }
   {
-    'name': 'constant.numeric.integer.decimal.fstar'
-    'match': '\\b([0-9]+)'
+    'name'  : 'keyword.other.fstar'
+    'match' : '\\b(opaque|logic|requires|ensures|modifies|match|with|and|kind|type|val|open|module|effect)'
+  }
+  {
+    'name'  : 'constant.numeric.integer.decimal.fstar'
+    'match' : '\\b([0-9]+)'
+  }
+  {
+    'name'  : 'constant.language.empty-list.fstar'
+    'match' : '\\[\\]'
+  }
+  {
+    'name'  : 'constant.language.unit.fstar'
+    'match' : '\\(\\)'
+  }
+  {
+    'name'  : 'constant.language.Type.fstar'
+    'match' : 'Type'
+  }
+  {
+      'name'  : 'constant.language.monad.fstar'
+      'match' : '\\b(Pure|PURE|Tot|STATE|ST|St|ALL|All|EXN|Exn|Ex|DIV|Div)\\b'
+  }
+  {
+    'name'  : 'keyword.other.arrow.fstar'
+    'match' : '->'
+  }
+  {
+    'name'  : 'keyword.opeartor.logical-connective.fstar'
+    'match' : '(==>|<==>|\\\\/|/\\\\|forall|exists)'
+  }
+  {
+    'name'  : 'variable.other.generic-type.fstar'
+    'match' : '\'[a-zA-Z0-9_]+\\b'
   }
   {
     'include': '#comments'
