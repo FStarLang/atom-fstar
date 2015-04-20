@@ -1,5 +1,19 @@
-#!/bin/sh
-INSTALL_DIR=~/.atom/packages/language-fstar
+#! /bin/bash
 
-mkdir -p $INSTALL_DIR
-cp -R * $INSTALL_DIR
+cd "$(dirname ${BASH_SOURCE[0]})"
+
+action="${1:-install}"
+
+case "$action" in
+  install)
+    apm install && apm link
+    ;;
+
+  uninstall)
+    apm unlink
+    ;;
+
+  *)
+    echo "Usage: $0 [install|uninstall]" >&2
+    ;;
+esac
