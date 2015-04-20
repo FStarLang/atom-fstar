@@ -21,7 +21,7 @@ Install the [Script] package by doing `apm install script` from the command line
 For now, Script does not support F\* out of the box; so, you will need to hack
 it a bit.
 
-Add the following lines to `.atom/packages/`
+Add the following lines to `.atom/packages/script/lib/grammars.coffee`
 
 ```
 'F*':
