@@ -11,7 +11,7 @@
   }
   {
     'name'  : 'keyword.other.fstar'
-    'match' : '\\b(opaque|logic|requires|ensures|modifies|match|with|and|kind|type|val|open|module|effect)'
+    'match' : '\\b(opaque|logic|requires|ensures|modifies|match|with|and|kind|type|val|open|module|effect)\\b'
   }
   {
     'name'  : 'constant.numeric.integer.decimal.fstar'
