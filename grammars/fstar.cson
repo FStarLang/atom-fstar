@@ -4,6 +4,10 @@
 
 'fileTypes': ['fst']
 
+'editor':
+  'commentStart' : '\\(\\*'
+  'commentEnd'   : '\\*\\)'
+
 'patterns': [
   {
     'name'  : 'keyword.control.fstar'
@@ -55,10 +59,6 @@
     'patterns': [
       {
         'name': 'comment.block.fstar'
-        'match': '//.*'
-      }
-      {
-        'name': 'comment.block.fstar'
         'begin': '\\(\\*'
         'beginCaptures':
           '0':
@@ -72,5 +72,9 @@
             'include': '#comments'
           }
         ]
+      }
+      {
+        'name': 'comment.line.fstar'
+        'match': '//.*'
       }
     ]

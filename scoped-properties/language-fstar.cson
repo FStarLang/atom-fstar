@@ -1,0 +1,4 @@
+'.source.fstar':
+  'editor':
+    'commentStart': '\(\*'
+    'commentEnd': '\*\)'
