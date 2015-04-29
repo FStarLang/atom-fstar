@@ -27,7 +27,7 @@ the `errorMatch` part)
   "cmd": "fstar",
   "args": [ "{FILE_ACTIVE}" ],
   "sh": false,
-  "errorMatch": "(?<file>[^\\(]+.fst)\\((?<line>\\d+),(?<col>\\d+).*\\n"
+  "errorMatch": "(?<file>[^\\(\n]+.fst)\\((?<line>\\d+),(?<col>\\d+).*\\n"
 }
 ```
 
