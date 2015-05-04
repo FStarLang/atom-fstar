@@ -17,7 +17,7 @@
     'name'  : 'keyword.other.fstar'
     'match' : '\\b(opaque|logic|requires|ensures|modifies|match|with|and|kind|\
                   type|val|open|module|effect|default|new_effect|sub_effect|\
-                  total|private)\\b'
+                  total|private|begin|end)\\b'
   }
   {
     'name'  : 'constant.numeric.integer.decimal.fstar'
@@ -37,7 +37,8 @@
   }
   {
       'name'  : 'constant.language.monad.fstar'
-      'match' : '\\b(Pure|PURE|Tot|STATE|ST|St|ALL|All|EXN|Exn|Ex|DIV|Div|GHOST|Ghost|GTot)\\b'
+      'match' : '\\b(Pure|PURE|Tot|STATE|ST|St|ALL|All|EXN|Exn|Ex|\
+                     DIV|Div|GHOST|Ghost|GTot|Lemma)\\b'
   }
   {
     'name'  : 'keyword.other.arrow.fstar'
