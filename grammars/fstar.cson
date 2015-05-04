@@ -11,11 +11,13 @@
 'patterns': [
   {
     'name'  : 'keyword.control.fstar'
-    'match' : '\\b(assume|assert|let|in|if|then|else|fun|rec)\\b'
+    'match' : '\\b(assume|assert|let|in|if|then|else|fun|rec|function)\\b'
   }
   {
     'name'  : 'keyword.other.fstar'
-    'match' : '\\b(opaque|logic|requires|ensures|modifies|match|with|and|kind|type|val|open|module|effect)\\b'
+    'match' : '\\b(opaque|logic|requires|ensures|modifies|match|with|and|kind|\
+                  type|val|open|module|effect|default|new_effect|sub_effect|\
+                  total|private)\\b'
   }
   {
     'name'  : 'constant.numeric.integer.decimal.fstar'
@@ -35,14 +37,14 @@
   }
   {
       'name'  : 'constant.language.monad.fstar'
-      'match' : '\\b(Pure|PURE|Tot|STATE|ST|St|ALL|All|EXN|Exn|Ex|DIV|Div)\\b'
+      'match' : '\\b(Pure|PURE|Tot|STATE|ST|St|ALL|All|EXN|Exn|Ex|DIV|Div|GHOST|Ghost|GTot)\\b'
   }
   {
     'name'  : 'keyword.other.arrow.fstar'
     'match' : '->'
   }
   {
-    'name'  : 'keyword.opeartor.logical-connective.fstar'
+    'name'  : 'keyword.logical-connective.fstar'
     'match' : '(==>|<==>|\\\\/|/\\\\|forall|exists)'
   }
   {
