@@ -2,7 +2,7 @@
 
 'name': 'F*'
 
-'fileTypes': ['fst']
+'fileTypes': ['fst', 'fsi']
 
 'editor':
   'commentStart' : '\\(\\*'
@@ -17,7 +17,7 @@
     'name'  : 'keyword.other.fstar'
     'match' : '\\b(opaque|logic|requires|ensures|modifies|match|with|and|kind|\
                   type|val|open|module|effect|default|new_effect|sub_effect|\
-                  total|private|begin|end)\\b'
+                  total|private|begin|end|decreases)\\b'
   }
   {
     'name'  : 'constant.numeric.integer.decimal.fstar'
@@ -33,7 +33,7 @@
   }
   {
     'name'  : 'constant.language.Type.fstar'
-    'match' : 'Type'
+    'match' : '\\b(Type)\\b'
   }
   {
       'name'  : 'constant.language.monad.fstar'
@@ -46,7 +46,7 @@
   }
   {
     'name'  : 'keyword.logical-connective.fstar'
-    'match' : '(==>|<==>|\\\\/|/\\\\|forall|exists)'
+    'match' : '\\b(==>|<==>|\\\\/|/\\\\|forall|exists)\\b'
   }
   {
     'name'  : 'variable.other.generic-type.fstar'
