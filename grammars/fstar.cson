@@ -2,7 +2,7 @@
 
 'name': 'F*'
 
-'fileTypes': ['fst', 'fsi']
+'fileTypes': ['fst', 'fsi', 'fs', 'fs7', 'fsti']
 
 'editor':
   'commentStart' : '\\(\\*'
