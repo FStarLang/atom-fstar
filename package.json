@@ -2,7 +2,7 @@
   "name": "language-fstar",
   "version": "0.0.1",
   "description": "Atom mode for the F* language",
-  "repository": "https://github.com/FStarLang/FStarIDE.git",
+  "repository": "https://github.com/FStarLang/atom-fstar.git",
   "license": "Apache 2.0",
   "engines": {
     "atom": "*",
