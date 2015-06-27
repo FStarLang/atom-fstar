@@ -8,5 +8,6 @@
     "atom": "*",
     "node": "*"
   },
+  "readme":"https://github.com/FStarLang/atom-fstar/blob/master/README.md",
   "dependencies": {}
 }
