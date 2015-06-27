@@ -9,7 +9,7 @@ Download and install [Atom] for your platform
 
 Run `apm install`, followed by `apm link` from the root directory of this repository.
 
-Any file with a `.fst` extension will trigger loading of the language-fstar mode.
+Any file with a `.fst` `.fsti` `.fs7` extension will trigger loading of the language-fstar mode.
 For now, you only get very simple syntax highlighting.
 
 ### Building an F\* project
