@@ -9,19 +9,43 @@
   'commentEnd'   : '\\*\\)'
 
 'patterns': [
+  { # private , let, rec, function names, and val
+    'name'  : 'meta.function.fstar'
+    'match' : '(?:\\b)(?:(private)\\s+)?(let|var)(?:\\s+)(?:(rec)\\s+)?([a-zA-Z](?:\\w|\\_)*)'
+    'captures' :
+      '1' :
+        'name' : 'storage.type.modifier.fstar'
+      '2' :
+        'name' : 'storage.type.function.fstar'
+      '3' :
+        'name' : 'storage.type.modifier.fstar'
+      '4' :
+        'name' : 'entity.name.function.fstar'
+  }
+  { # private, type and type names
+    'name'  : 'meta.type.fstar'
+    'match' : '(?:\\b(private)\\s+)?(?:\\b(type)\\s+)([a-zA-Z\'](?:\\w|\\_|\')*)'
+    'captures' :
+      '1' :
+        'name' : 'storage.type.modifier.fstar'
+      '2' :
+        'name' : 'storage.type.type.fstar'
+      '3' :
+        'name' : 'entity.name.type.fstar'
+  }
   {
     'name'  : 'keyword.control.fstar'
-    'match' : '\\b(assume|assert|let|in|if|then|else|fun|rec|try|function)\\b'
+    'match' : '\\b(assume|assert|in|if|then|else|fun|try|function)\\b'
   }
   {
     'name'  : 'keyword.other.fstar'
     'match' : '\\b(opaque|logic|requires|ensures|modifies|match|with|and|kind|\
-                  type|val|open|module|effect|default|new_effect|sub_effect|\
+                  type|open|module|effect|default|new_effect|sub_effect|\
                   total|private|begin|end|decreases|new|abstract|irreducible|\
                   unfoldable|inline|noeq)\\b'
   }
   {
-    'name'  : 'comment.line.preprocessor'
+    'name'  : 'comment.line.preprocessor.fstar'
     'match' : '\\b(#set-options)\\b'
   }
 
@@ -29,7 +53,7 @@
     'name'  : 'constant.numeric.integer.decimal.fstar'
     'match' : '\\b([0-9]+)'
   }
-    'name'  : 'constant.language.boolean'
+    'name'  : 'constant.language.boolean.fstar'
     'match' : '\\b(True|False)\\b'
   {
     'name'  : 'constant.language.empty-list.fstar'
