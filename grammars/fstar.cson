@@ -11,18 +11,26 @@
 'patterns': [
   {
     'name'  : 'keyword.control.fstar'
-    'match' : '\\b(assume|assert|let|in|if|then|else|fun|rec|function)\\b'
+    'match' : '\\b(assume|assert|let|in|if|then|else|fun|rec|try|function)\\b'
   }
   {
     'name'  : 'keyword.other.fstar'
     'match' : '\\b(opaque|logic|requires|ensures|modifies|match|with|and|kind|\
                   type|val|open|module|effect|default|new_effect|sub_effect|\
-                  total|private|begin|end|decreases)\\b'
+                  total|private|begin|end|decreases|new|abstract|irreducible|\
+                  unfoldable|inline|noeq)\\b'
   }
+  {
+    'name'  : 'comment.line.preprocessor'
+    'match' : '\\b(#set-options)\\b'
+  }
+
   {
     'name'  : 'constant.numeric.integer.decimal.fstar'
     'match' : '\\b([0-9]+)'
   }
+    'name'  : 'constant.language.boolean'
+    'match' : '\\b(True|False)\\b'
   {
     'name'  : 'constant.language.empty-list.fstar'
     'match' : '\\[\\]'
@@ -37,7 +45,7 @@
   }
   {
       'name'  : 'constant.language.monad.fstar'
-      'match' : '\\b(Pure|PURE|Tot|STATE|ST|St|ALL|All|EXN|Exn|Ex|\
+      'match' : '\\b(Pure|PURE|Tot|STATE|ST|St|STL|Stl|ALL|All|EXN|Exn|Ex|\
                      DIV|Div|GHOST|Ghost|GTot|Lemma)\\b'
   }
   {
