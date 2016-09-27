@@ -11,7 +11,7 @@
 'patterns': [
   { # private , let, rec, function names, and val
     'name'  : 'meta.function.fstar'
-    'match' : '(?:\\b)(?:(private)\\s+)?(let|var)(?:\\s+)(?:(rec)\\s+)?([a-zA-Z](?:\\w|\\_)*)'
+    'match' : '(?:\\b)(?:(private)\\s+)?(let|val)(?:\\s+)(?:(rec)\\s+)?([a-zA-Z](?:\\w|\\_)*)'
     'captures' :
       '1' :
         'name' : 'storage.type.modifier.fstar'
@@ -54,7 +54,7 @@
     'match' : '\\b([0-9]+)'
   }
     'name'  : 'constant.language.boolean.fstar'
-    'match' : '\\b(True|False)\\b'
+    'match' : '\\b(true|false)\\b'
   {
     'name'  : 'constant.language.empty-list.fstar'
     'match' : '\\[\\]'
@@ -68,9 +68,13 @@
     'match' : '\\b(Type)\\b'
   }
   {
-      'name'  : 'constant.language.monad.fstar'
-      'match' : '\\b(Pure|PURE|Tot|STATE|ST|St|STL|Stl|ALL|All|EXN|Exn|Ex|\
+    'name'  : 'constant.language.monad.fstar'
+    'match' : '\\b(Pure|PURE|Tot|STATE|ST|St|STL|Stl|ALL|All|EXN|Exn|Ex|\
                      DIV|Div|GHOST|Ghost|GTot|Lemma)\\b'
+  }
+  {
+    'name' : 'constant.language.primitive.fstar'
+    'match': '\\b(int|nat|bool)\\b'
   }
   {
     'name'  : 'keyword.other.arrow.fstar'
