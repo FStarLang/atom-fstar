@@ -38,6 +38,15 @@
     'match' : '\\b(assume|assert|in|if|then|else|fun|try|function)\\b'
   }
   {
+    'name'  : 'meta.module.binding'
+    'match' : '\\b(module) ([[:upper:]][a-zA-Z0-9]*)'
+    'captures' :
+      '1' :
+        'name' : 'keyword.other.module-definition.fstar'
+      '2' :
+        'name' : 'support.other.module.fstar'
+  }
+  {
     'name'  : 'keyword.other.fstar'
     'match' : '\\b(opaque|logic|requires|ensures|modifies|match|with|and|kind|\
                   type|open|module|effect|default|new_effect|sub_effect|\
