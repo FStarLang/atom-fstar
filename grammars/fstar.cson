@@ -38,7 +38,7 @@
     'match' : '\\b(assume|assert|in|if|then|else|fun|try|function)\\b'
   }
   {
-    'name'  : 'meta.module.binding'
+    'name'  : 'meta.module.binding.fstar'
     'match' : '\\b(module) ([[:upper:]][a-zA-Z0-9]*)'
     'captures' :
       '1' :
