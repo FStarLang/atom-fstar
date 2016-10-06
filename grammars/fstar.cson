@@ -109,13 +109,25 @@
     'name'  : 'keyword.other.logic.fstar'
     'match' : '\\s?(forall|exists)\\s?'
   }
-  {
+  { # defines ==>, <==>, /\, and \/
     'name'  : 'keyword.operator.logic.fstar'
     'match' : '(==>|<==>|\\\\/|\\/\\\\)'
   }
   {
+    'name'  : 'keyword.operator.comparison.fstar'
+    'match' : '(<>|<=|>=|>|<|=)'
+  }
+  {
+    'name'  : 'keyword.operator.arithmetic.fstar'
+    'match' : '(\\+|\\-|\\*|\\/)'
+  }
+  {
     'name'  : 'variable.other.generic-type.fstar'
     'match' : '\'[a-zA-Z0-9_]+\\b'
+  }
+  {
+    'name'  : 'keyword.operator.type-declaration.fstar'
+    'match' : '(:)'
   }
   {
     'include': '#comments'
