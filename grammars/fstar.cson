@@ -37,19 +37,29 @@
     'name'  : 'keyword.control.fstar'
     'match' : '\\b(assume|assert|in|if|then|else|fun|try|function)\\b'
   }
-  {
+  { # Module declarations
     'name'  : 'meta.module.binding.fstar'
     'match' : '\\b(module) ([[:upper:]][a-zA-Z0-9]*)'
     'captures' :
       '1' :
-        'name' : 'keyword.other.module-definition.fstar'
+        'name' : 'storage.type.module.fstar'
       '2' :
-        'name' : 'support.other.module.fstar'
+        'name' : 'entity.name.module.fstar'
+  }
+  { # Open statements
+    # TODO : Let open
+    'name' : 'meta.module.open.fstar'
+    'match' : '\\b(open) ([[:upper:]][a-zA-Z0-9]*(?:.?[a-zA-Z0-9]*)*)'
+    'captures' :
+      '1' :
+        'name' : 'keyword.open.fstar'
+      '2' :
+        'name' : 'support.name.module.fstar'
   }
   {
     'name'  : 'keyword.other.fstar'
     'match' : '\\b(opaque|logic|requires|ensures|modifies|match|with|and|kind|\
-                  type|open|module|effect|default|new_effect|sub_effect|\
+                  type|effect|default|new_effect|sub_effect|\
                   total|private|begin|end|decreases|new|abstract|irreducible|\
                   unfoldable|inline|noeq)\\b'
   }
@@ -62,8 +72,14 @@
     'name'  : 'constant.numeric.integer.decimal.fstar'
     'match' : '\\b([0-9]+)'
   }
+  {
     'name'  : 'constant.language.boolean.fstar'
     'match' : '\\b(true|false)\\b'
+  }
+  {
+    'name'  : 'constant.language.boolean-type.fstar'
+    'match' : '\\b(True|False)\\b'
+  }
   {
     'name'  : 'constant.language.empty-list.fstar'
     'match' : '\\[\\]'
@@ -86,12 +102,16 @@
     'match': '\\b(int|nat|bool)\\b'
   }
   {
-    'name'  : 'keyword.other.arrow.fstar'
+    'name'  : 'keyword.operator.arrow.fstar'
     'match' : '->'
   }
   {
-    'name'  : 'keyword.logical-connective.fstar'
-    'match' : '\\b(==>|<==>|\\\\/|/\\\\|forall|exists)\\b'
+    'name'  : 'keyword.other.logic.fstar'
+    'match' : '\\s?(forall|exists)\\s?'
+  }
+  {
+    'name'  : 'keyword.operator.logic.fstar'
+    'match' : '(==>|<==>|\\\\/|\\/\\\\)'
   }
   {
     'name'  : 'variable.other.generic-type.fstar'
