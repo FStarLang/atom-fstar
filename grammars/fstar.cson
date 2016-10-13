@@ -9,9 +9,12 @@
   'commentEnd'   : '\\*\\)'
 
 'patterns': [
+  {
+      'include': '#comments'
+  }
   { # private , let, rec, function names, and val
     'name'  : 'meta.function.fstar'
-    'match' : '(?:\\b)(?:(private)\\s+)?(let|val)(?:\\s+)(?:(rec)\\s+)?([a-zA-Z](?:\\w|\\_)*)'
+    'match' : '(?:\\b)(?:(private)\\s+)?(let|val)(?:\\s+)(?:(rec)\\s+)?([a-z][a-zA-Z\'_]*)'
     'captures' :
       '1' :
         'name' : 'storage.type.modifier.fstar'
@@ -103,11 +106,11 @@
   }
   {
     'name'  : 'keyword.operator.arrow.fstar'
-    'match' : '->'
+    'match' : '(->)'
   }
   {
     'name'  : 'keyword.other.logic.fstar'
-    'match' : '\\s?(forall|exists)\\s?'
+    'match' : '\\b(forall|exists)\\b'
   }
   { # defines ==>, <==>, /\, and \/
     'name'  : 'keyword.operator.logic.fstar'
@@ -128,9 +131,6 @@
   {
     'name'  : 'keyword.operator.type-declaration.fstar'
     'match' : '(:)'
-  }
-  {
-    'include': '#comments'
   }
 ]
 
