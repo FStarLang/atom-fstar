@@ -14,15 +14,13 @@
   }
   { # private , let, rec, function names, and val
     'name'  : 'meta.function.fstar'
-    'match' : '(?:\\b)(?:(private)\\s+)?(let|val)(?:\\s+)(?:(rec)\\s+)?([a-z][a-zA-Z\'_]*)'
+    'match' : '(?:\\b)(?:(private)\\s+)?(let rec|let|val)(?:\\s+)([a-z][a-zA-Z0-9\'_]*)'
     'captures' :
       '1' :
         'name' : 'storage.type.modifier.fstar'
       '2' :
         'name' : 'storage.type.function.fstar'
       '3' :
-        'name' : 'storage.type.modifier.fstar'
-      '4' :
         'name' : 'entity.name.function.fstar'
   }
   { # private, type and type names
