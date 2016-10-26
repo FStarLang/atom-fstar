@@ -127,6 +127,14 @@
     'match' : '\'[a-zA-Z0-9_]+\\b'
   }
   {
+    'name'  : 'keyword.operator.append.fstar'
+    'match' : '(@)'
+  }
+  {
+    'name'  : 'keyword.operator.concatenate.fstar'
+    'match' : '(::)'
+  }
+  {
     'name'  : 'keyword.operator.type-declaration.fstar'
     'match' : '(:)'
   }
