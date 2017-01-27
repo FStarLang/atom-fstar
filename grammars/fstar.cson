@@ -14,7 +14,27 @@
   }
   { # private , let, rec, function names, and val
     'name'  : 'meta.function.fstar'
-    'match' : '(?:\\b)(?:(private)\\s+)?(let rec|let|val)(?:\\s+)([a-z][a-zA-Z0-9\'_]*)'
+    'match' : '''
+                (?:\\b)\
+                (?:\
+                  (abstract|private|assume|irreducible|unfoldable|new|inline|noeq|\
+                  unopteq|logic|reifiable|reflectable)\
+                \\s+)?\
+                (let rec|let|val)\
+                (?:\\s+)\
+                (?:\
+                  (?:\
+                    (?:\\()?\
+                    ([a-z][a-zA-Z0-9\'_]*)\
+                  )\
+                  |\
+                  (?:\
+                    (?:\\()\
+                    ([^\\s\\(\\)]+?)\
+                    (?:\\))\
+                  )\
+                )
+              '''
     'captures' :
       '1' :
         'name' : 'storage.type.modifier.fstar'
@@ -22,10 +42,20 @@
         'name' : 'storage.type.function.fstar'
       '3' :
         'name' : 'entity.name.function.fstar'
+      '4' :
+        'name' : 'entity.name.function.fstar'
+
   }
   { # private, type and type names
     'name'  : 'meta.type.fstar'
-    'match' : '(?:\\b(private)\\s+)?(?:\\b(type)\\s+)([a-zA-Z\'](?:\\w|\\_|\')*)'
+    'match' : '''
+                (?:\\b\
+                  (abstract|private|assume|irreducible|unfoldable|\
+                  new|inline|noeq|unopteq|logic|reifiable|reflectable)\
+                \\s+)?\
+                (?:\\b(type)\\s+)\
+                ([a-zA-Z\'](?:\\w|\\_|\')*)
+              '''
     'captures' :
       '1' :
         'name' : 'storage.type.modifier.fstar'
