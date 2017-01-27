@@ -14,25 +14,28 @@
   }
   { # private , let, rec, function names, and val
     'name'  : 'meta.function.fstar'
-    'match' : '''
-                (?:\\b)\
-                (?:\
+    'match' : '''(?x) # split regex over several lines
+                (?:\\b) # start at word boundary
+
+                (?: # qualifiers
                   (abstract|private|assume|irreducible|unfoldable|new|inline|noeq|\
-                  unopteq|logic|reifiable|reflectable)\
-                \\s+)?\
-                (let rec|let|val)\
-                (?:\\s+)\
-                (?:\
-                  (?:\
-                    (?:\\()?\
-                    ([a-z][a-zA-Z0-9\'_]*)\
-                  )\
-                  |\
-                  (?:\
-                    (?:\\()\
-                    ([^\\s\\(\\)]+?)\
-                    (?:\\))\
-                  )\
+                  unopteq|logic|reifiable|reflectable)
+                \\s+)? # space
+
+                (let rec|let|val) # declarations
+                (?:\\s+) # space
+
+                (?: # match function names and operators
+                  (?: # function names
+                    (?:\\()?
+                    ([a-z][a-zA-Z0-9\'_]*)
+                  )
+                  |
+                  (?: # define operators
+                    (?:\\()
+                    ([^\\s\\(\\)]+?)
+                    (?:\\))
+                  )
                 )
               '''
     'captures' :
@@ -48,12 +51,13 @@
   }
   { # private, type and type names
     'name'  : 'meta.type.fstar'
-    'match' : '''
-                (?:\\b\
+    'match' : '''(?x)
+                (?:\\b
                   (abstract|private|assume|irreducible|unfoldable|\
                   new|inline|noeq|unopteq|logic|reifiable|reflectable)\
-                \\s+)?\
-                (?:\\b(type)\\s+)\
+                \\s+)?
+
+                (?:\\b(type)\\s+)
                 ([a-zA-Z\'](?:\\w|\\_|\')*)
               '''
     'captures' :
@@ -64,9 +68,9 @@
       '3' :
         'name' : 'entity.name.type.fstar'
   }
-  {
+  { # Keywords
     'name'  : 'keyword.control.fstar'
-    'match' : '\\b(assume|assert|in|if|then|else|fun|try|function)\\b'
+    'match' : '\\b(assert|in|if|then|else|fun|try|function|match|with|and)\\b'
   }
   { # Module declarations
     'name'  : 'meta.module.binding.fstar'
@@ -89,10 +93,10 @@
   }
   {
     'name'  : 'keyword.other.fstar'
-    'match' : '\\b(opaque|logic|requires|ensures|modifies|match|with|and|kind|\
-                  type|effect|default|new_effect|sub_effect|\
-                  total|private|begin|end|decreases|new|abstract|irreducible|\
-                  unfoldable|inline|noeq)\\b'
+    'match' : '''(?x)
+                  \\b(requires|ensures|modifies|kind|effect|default|new_effect|
+                  sub_effect|total|begin|end|decreases)\\b
+              '''
   }
   {
     'name'  : 'comment.line.preprocessor.fstar'
@@ -130,7 +134,7 @@
   }
   {
     'name' : 'constant.language.primitive.fstar'
-    'match': '\\b(int|nat|bool)\\b'
+    'match': '\\b(int|nat|bool|pos)\\b'
   }
   {
     'name'  : 'keyword.operator.arrow.fstar'
