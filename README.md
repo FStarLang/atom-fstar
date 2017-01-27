@@ -14,6 +14,6 @@ For now, the package defines only syntax highlighting.
 
 ### Running an F\* project
 
-Install the [atom-script] package
+Install the [atom-script] package. Make sure fstar is in your path. If using linux, you may need to rename 'fstar.exe' to 'fstar'.
 
 [atom-script]: https://github.com/rgbkrk/atom-script
