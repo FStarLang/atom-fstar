@@ -22,7 +22,7 @@
                   unopteq|logic|reifiable|reflectable)
                 \\s+)? # space
 
-                (let rec|let|val) # declarations
+                (val|(?:let)(?:\\srec)?) # declarations
                 (?:\\s+) # space
 
                 (?: # match function names and operators
@@ -40,9 +40,9 @@
               '''
     'captures' :
       '1' :
-        'name' : 'storage.type.modifier.fstar'
+        'name' : 'keyword.qualifier.fstar'
       '2' :
-        'name' : 'storage.type.function.fstar'
+        'name' : 'keyword.function.fstar'
       '3' :
         'name' : 'entity.name.function.fstar'
       '4' :
@@ -62,9 +62,9 @@
               '''
     'captures' :
       '1' :
-        'name' : 'storage.type.modifier.fstar'
+        'name' : 'keyword.qualifier.fstar'
       '2' :
-        'name' : 'storage.type.type.fstar'
+        'name' : 'keyword.type.fstar'
       '3' :
         'name' : 'entity.name.type.fstar'
   }
@@ -77,7 +77,7 @@
     'match' : '\\b(module) ([[:upper:]][a-zA-Z0-9]*)'
     'captures' :
       '1' :
-        'name' : 'storage.type.module.fstar'
+        'name' : 'keyword.module.fstar'
       '2' :
         'name' : 'entity.name.module.fstar'
   }
@@ -124,8 +124,8 @@
     'match' : '\\(\\)'
   }
   {
-    'name'  : 'constant.language.Type.fstar'
-    'match' : '\\b(Type)\\b'
+    'name'  : 'constant.language.type.fstar'
+    'match' : '\\b(Type|int|nat|bool|pos)\\b'
   }
   {
     'name'  : 'constant.language.monad.fstar'
@@ -133,12 +133,8 @@
                      DIV|Div|GHOST|Ghost|GTot|Lemma)\\b'
   }
   {
-    'name' : 'constant.language.primitive.fstar'
-    'match': '\\b(int|nat|bool|pos)\\b'
-  }
-  {
     'name'  : 'keyword.operator.arrow.fstar'
-    'match' : '(->)'
+    'match' : '(->|~>)'
   }
   {
     'name'  : 'keyword.other.logic.fstar'
@@ -149,16 +145,24 @@
     'match' : '(==>|<==>|\\\\/|\\/\\\\)'
   }
   {
+    'name'  : 'keyword.operator.cast.fstar'
+    'match' : '(<:)'
+  }  
+  {
     'name'  : 'keyword.operator.comparison.fstar'
-    'match' : '(<>|<=|>=|>|<|=)'
+    'match' : '(<>|<=|>=|>|<|=|==|===)'
+  }
+  {
+    'name'  : 'keyword.operator.other.fstar'
+    'match' : '(\\!|\\?)'
+  }
+  {
+    'name'  : 'keyword.operator.implicit.fstar'
+    'match' : '(\\#)'
   }
   {
     'name'  : 'keyword.operator.arithmetic.fstar'
     'match' : '(\\+|\\-|\\*|\\/)'
-  }
-  {
-    'name'  : 'variable.other.generic-type.fstar'
-    'match' : '\'[a-zA-Z0-9_]+\\b'
   }
   {
     'name'  : 'keyword.operator.append.fstar'
@@ -169,7 +173,7 @@
     'match' : '(::)'
   }
   {
-    'name'  : 'keyword.operator.type-declaration.fstar'
+    'name'  : 'keyword.type-declaration.fstar'
     'match' : '(:)'
   }
 ]
