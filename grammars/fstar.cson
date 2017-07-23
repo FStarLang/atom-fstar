@@ -104,8 +104,8 @@
   }
 
   {
-    'name'  : 'constant.numeric.integer.decimal.fstar'
-    'match' : '\\b([0-9]+)'
+    'name'  : 'constant.numeric.integer.fstar'
+    'match' : '\\b([0-9]+(y|uy|s|us|l|ul|L|uL|UL)?)'
   }
   {
     'name'  : 'constant.language.boolean.fstar'
@@ -147,15 +147,19 @@
   {
     'name'  : 'keyword.operator.cast.fstar'
     'match' : '(<:)'
-  }  
-  {
-    'name'  : 'keyword.operator.comparison.fstar'
-    'match' : '(<>|<=|>=|>|<|=|==|===)'
   }
   {
-    'name'  : 'keyword.operator.other.fstar'
-    'match' : '(\\!|\\?)'
+    'name'  : 'keyword.operator.user.fstar'
+    'match' : '([\\&\\@\\+\\-\\=\\/\\<\\>\\_\\.\\,\\|\\!\\^\\%\\*\\?\\:\\;\\$\\~]+)'
   }
+  #{
+  #  'name'  : 'keyword.operator.comparison.fstar'
+  #  'match' : '(<>|<=|>=|>|<|=|==|===)'
+  #}
+  #{
+  #  'name'  : 'keyword.operator.other.fstar'
+  #  'match' : '(\\!|\\?)'
+  #}
   {
     'name'  : 'keyword.operator.implicit.fstar'
     'match' : '(\\#)'
