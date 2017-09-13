@@ -5,8 +5,8 @@
 'fileTypes': ['fst', 'fsti', 'fs7']
 
 'editor':
-  'commentStart' : '\\(\\*'
-  'commentEnd'   : '\\*\\)'
+  'commentStart' : '\\(\\*+'
+  'commentEnd'   : '\\*+\\)'
 
 'patterns': [
   {
@@ -70,7 +70,7 @@
   }
   { # Keywords
     'name'  : 'keyword.control.fstar'
-    'match' : '\\b(assert|in|if|then|else|fun|try|function|match|with|and)\\b'
+    'match' : '\\b(assert|in|if|then|else|fun|λ|try|function|match|with|and)\\b'
   }
   { # Module declarations
     'name'  : 'meta.module.binding.fstar'
@@ -113,7 +113,7 @@
   }
   {
     'name'  : 'constant.language.boolean-type.fstar'
-    'match' : '\\b(True|False)\\b'
+    'match' : '(\\b(?:True|False)\\b)|(?:⊤|⊥)'
   }
   {
     'name'  : 'constant.language.empty-list.fstar'
@@ -134,15 +134,15 @@
   }
   {
     'name'  : 'keyword.operator.arrow.fstar'
-    'match' : '(->|~>)'
+    'match' : '(->|~>|→)'
   }
   {
     'name'  : 'keyword.other.logic.fstar'
-    'match' : '\\b(forall|exists)\\b'
+    'match' : '(\\b(?:forall|exists)\\b)|(∀|∃)'
   }
   { # defines ==>, <==>, /\, and \/
     'name'  : 'keyword.operator.logic.fstar'
-    'match' : '(==>|<==>|\\\\/|\\/\\\\)'
+    'match' : '(==>|⇒|<==>|⇔|\\\\/|∨|\\/\\\\|∧)'
   }
   {
     'name'  : 'keyword.operator.cast.fstar'
@@ -187,11 +187,11 @@
     'patterns': [
       {
         'name': 'comment.block.fstar'
-        'begin': '\\(\\*'
+        'begin': '\\(\\*+'
         'beginCaptures':
           '0':
             'name': 'punctuation.definition.comment.begin.fstar'
-        'end': '\\*\\)'
+        'end': '\\*+\\)'
         'endCaptures':
           '0':
             'name': 'punctuation.definition.comment.end.fstar'
