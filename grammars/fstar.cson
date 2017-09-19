@@ -166,7 +166,7 @@
   }
   {
     'name'  : 'keyword.operator.arithmetic.fstar'
-    'match' : '(×\\+|\\-|\\*|\\/)'
+    'match' : '(×|\\+|\\-|\\*|\\/)'
   }
   {
     'name'  : 'keyword.operator.append.fstar'
