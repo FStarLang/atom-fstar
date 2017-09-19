@@ -125,7 +125,7 @@
   }
   {
     'name'  : 'constant.language.type.fstar'
-    'match' : '\\b(Type|int|nat|bool|pos)\\b'
+    'match' : '\\b(Type|int|ℤ|nat|ℕ|bool|pos)\\b'
   }
   {
     'name'  : 'constant.language.monad.fstar'
@@ -150,7 +150,7 @@
   }
   {
     'name'  : 'keyword.operator.user.fstar'
-    'match' : '([\\&\\@\\+\\-\\=\\/\\<\\>\\_\\.\\,\\|\\!\\^\\%\\*\\?\\:\\;\\$\\~]+)'
+    'match' : '([≥≤≠¬⇒←‖≪⟶⟵×▹◃\\&\\@\\+\\-\\=\\/\\<\\>\\_\\.\\,\\|\\!\\^\\%\\*\\?\\:\\;\\$\\~]+)'
   }
   #{
   #  'name'  : 'keyword.operator.comparison.fstar'
@@ -166,15 +166,19 @@
   }
   {
     'name'  : 'keyword.operator.arithmetic.fstar'
-    'match' : '(\\+|\\-|\\*|\\/)'
+    'match' : '(×\\+|\\-|\\*|\\/)'
   }
   {
     'name'  : 'keyword.operator.append.fstar'
     'match' : '(@)'
   }
   {
+    'name'  : 'keyword.operator.assign.fstar'
+    'match' : '(:=|≔)'
+  }
+  {
     'name'  : 'keyword.operator.concatenate.fstar'
-    'match' : '(::)'
+    'match' : '(::|⸬)'
   }
   {
     'name'  : 'keyword.type-declaration.fstar'
