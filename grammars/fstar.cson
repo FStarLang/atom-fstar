@@ -70,7 +70,7 @@
   }
   { # Keywords
     'name'  : 'keyword.control.fstar'
-    'match' : '\\b(assert|in|if|then|else|fun|λ|try|function|match|with|and)\\b'
+    'match' : '\\b(assert|in|if|then|else|fun|λ|try|function|match|with|and|do)\\b'
   }
   { # Module declarations
     'name'  : 'meta.module.binding.fstar'
@@ -102,10 +102,17 @@
     'name'  : 'comment.line.preprocessor.fstar'
     'match' : '\\b(#set-options)\\b'
   }
-
+  {
+    'name' : 'constant.language.string'
+    'match': '".*?"'
+  }
+  {
+    'name' : 'constant.language.char'
+    'match': '\'.\''
+  }
   {
     'name'  : 'constant.numeric.integer.fstar'
-    'match' : '\\b([0-9]+(y|uy|s|us|l|ul|L|uL|UL)?)'
+    'match' : '\\b(?:0x|0o|0b)?(?:[0-9]+(?:y|uy|s|us|l|ul|L|uL|UL)?)'
   }
   {
     'name'  : 'constant.language.boolean.fstar'
@@ -130,7 +137,7 @@
   {
     'name'  : 'constant.language.monad.fstar'
     'match' : '\\b(Pure|PURE|Tot|STATE|ST|St|STL|Stl|ALL|All|EXN|Exn|Ex|\
-                     DIV|Div|GHOST|Ghost|GTot|Lemma)\\b'
+                     DIV|Div|GHOST|Ghost|GTot|Lemma|TAC|Tactic|Tac)\\b'
   }
   {
     'name'  : 'keyword.operator.arrow.fstar'
@@ -174,7 +181,7 @@
   }
   {
     'name'  : 'keyword.operator.assign.fstar'
-    'match' : '(:=|≔)'
+    'match' : '(:=|≔|<--)'
   }
   {
     'name'  : 'keyword.operator.concatenate.fstar'
