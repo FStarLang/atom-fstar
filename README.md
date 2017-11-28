@@ -7,13 +7,13 @@ Download and install [Atom] for your platform
 
 [Atom]: https://atom.io/
 
-Run `apm install`, followed by `apm link` from the root directory of this repository.
+Run `apm link` from the root directory of this repository.
 
-Any file with a `.fst` `.fsti` `.fs7` extension will trigger loading of the language-fstar mode.
-For now, you only get very simple syntax highlighting.
+Any file with a `.fst` `.fsti` `.fs7` extension will be recognised as F* grammar.
+For now, the package defines only syntax highlighting.
 
-### Building an F\* project
+### Running an F\* project
 
-Install the [fstar-interactive] package
+Install the [atom-script] package. Make sure fstar is in your path. If using linux, you may need to rename 'fstar.exe' to 'fstar'.
 
-[fstar-interactive]: https://github.com/FStarLang/fstar-interactive
+[atom-script]: https://github.com/rgbkrk/atom-script
