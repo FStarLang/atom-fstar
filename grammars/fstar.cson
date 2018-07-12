@@ -2,16 +2,16 @@
 
 'name': 'F*'
 
-'fileTypes': ['fst', 'fsi', 'fs', 'fs7', 'fsti']
+'fileTypes': [ 'fst', 'fsti', 'fs7' ]
 
 'patterns': [
   {
     'name'  : 'keyword.control.fstar'
-    'match' : '\\b(assume|assert|let|in|if|then|else|fun|rec|function)\\b'
+    'match' : '\\b(assume|admit|assert|let|in|if|then|else|fun|rec|function)\\b'
   }
   {
     'name'  : 'keyword.other.fstar'
-    'match' : '\\b(opaque|logic|requires|ensures|modifies|match|with|and|kind|\
+    'match' : '\\b(opaque|noeq|inline_for_extraction|logic|requires|ensures|modifies|match|with|and|kind|\
                   type|val|open|module|effect|default|new_effect|sub_effect|\
                   total|private|begin|end|decreases)\\b'
   }
@@ -33,7 +33,7 @@
   }
   {
       'name'  : 'constant.language.monad.fstar'
-      'match' : '\\b(Pure|PURE|Tot|STATE|ST|St|ALL|All|EXN|Exn|Ex|\
+      'match' : '\\b(Pure|PURE|Tot|STATE|ST|St|Stack|ALL|All|EXN|Exn|Ex|\
                      DIV|Div|GHOST|Ghost|GTot|Lemma)\\b'
   }
   {
