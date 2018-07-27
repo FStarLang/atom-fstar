@@ -25,7 +25,7 @@ repository:
         name: 'support.class.base.fstar'
       }
       {
-        match: '(/\\\\|\\\\/|<:|<@|[(][|]|[|][)]|u#|~>|->|<--|<-|<==>|==>|[?][.]|[.]\\[|[.]\\(|[{][:]pattern|::|:=|;;|[!][{]|\\[[|]|[|]>|[|]\\]|[~+&?$|#,.:;=\\[\\](){}-])'
+        match: '(/\\\\|\\\\/|<:|<@|[(][|]|[|][)]|u#|~>|->|<--|<-|<==>|==>|[?][.]|[.]\\[|[.]\\(|[{][:]pattern|::|:=|;;|[!][{]|\\[[|]|[|]>|[|]\\]|[~+^&?$|#,.:;=\\[\\](){}-])'
         name: 'support.class.base.fstar'
       }
       {
@@ -37,7 +37,7 @@ repository:
         name: 'constant.language.fstar'
       }
       {
-        match: '\\b(let|in|type|kind|val|rec|and|assume|admit|assert|assert_norm|squash|failwith|SMTPat|SMTPatOr|hasEq|fun|function|forall|exists|exception|by|new_effect|reify|try|synth|with|when)\\b'
+        match: '\\b(let|in|type|kind|val|rec|and|if|then|else|assume|admit|assert|assert_norm|squash|failwith|SMTPat|SMTPatOr|hasEq|fun|function|forall|exists|exception|by|new_effect|reify|try|synth|with|when)\\b'
         name: 'keyword.other.fstar'
       }
       {
@@ -146,33 +146,6 @@ repository:
         ]
       }
       {
-        begin: '\\b(if)\\b'
-        beginCaptures:
-          1: name: 'keyword.control.if.fstar'
-        end: '\\b(else)\\b'
-        endCaptures:
-          1: name: 'keyword.control.else.fstar'
-        patterns: [
-          { include: '#expr' }
-          {
-            match: '\\b(then)\\b'
-            captures:
-              1: name: 'keyword.control.then.fstar'
-          }
-        ]
-      }
-      {
-        begin: '\\b(if)\\b'
-        beginCaptures:
-          1: name: 'keyword.control.if.fstar'
-        end: '\\b(then)\\b'
-        endCaptures:
-          1: name: 'keyword.control.then.fstar'
-        patterns: [
-          { include: '#expr' }
-        ]
-      }
-      {
         match: '\\b([\\p{Lu}\\p{Lt}][\\p{Lu}\\p{Lt}\\p{Ll}\\p{Lo}\\p{Lm}\\d\'_]*)\\b(?!\\s*[.])'
         captures:
           1: name: 'support.function.constructor.fstar'
@@ -276,53 +249,47 @@ repository:
         ]
       }
       {
-        'begin': '`'
-        'beginCaptures':
-          '0':
-            'name': 'punctuation.definition.operator.begin.fstar'
-        'end': '`'
-        'endCaptures':
-          '0':
-            'name': 'punctuation.definition.operator.end.fstar'
-        'name': 'string.quoted.template.fstar'
-        'patterns': [
-          {
-            'include': '#op_names'
-          }
+        begin: '`'
+        beginCaptures:
+          0: name: 'punctuation.definition.operator.begin.fstar'
+        end: '`'
+        endCaptures:
+          0: name: 'punctuation.definition.operator.end.fstar'
+        name: 'string.quoted.template.fstar'
+        patterns: [
+          { include: '#op_names' }
         ]
       }
     ]
-  'string_escapes':
-    'patterns': [
+  string_escapes:
+    patterns: [
       {
-        'match': '\\\\u(?![A-Fa-f0-9]{4}|{[A-Fa-f0-9]+})[^\'"]*'
-        'name': 'invalid.illegal.unicode-escape.fstar'
+        match: '\\\\u(?![A-Fa-f0-9]{4}|{[A-Fa-f0-9]+})[^\'"]*'
+        name: 'invalid.illegal.unicode-escape.fstar'
       }
       {
-        'match': '\\\\u(?:[A-Fa-f0-9]{4}|({)([A-Fa-f0-9]+)(}))'
-        'name': 'constant.character.escape.js'
-        'captures':
-          '1':
-            'name': 'punctuation.definition.unicode-escape.begin.bracket.curly.fstar'
-          '2':
-            'patterns': [
+        match: '\\\\u(?:[A-Fa-f0-9]{4}|({)([A-Fa-f0-9]+)(}))'
+        name: 'constant.character.escape.js'
+        captures:
+          1: name: 'punctuation.definition.unicode-escape.begin.bracket.curly.fstar'
+          2:
+            patterns: [
               {
-                'match': '[A-Fa-f\\d]{7,}|(?!10)[A-Fa-f\\d]{6}'
-                'name': 'invalid.illegal.unicode-escape.fstar'
+                match: '[A-Fa-f\\d]{7,}|(?!10)[A-Fa-f\\d]{6}'
+                name: 'invalid.illegal.unicode-escape.fstar'
               }
             ]
-          '3':
-            'name': 'punctuation.definition.unicode-escape.end.bracket.curly.fstar'
+          3: name: 'punctuation.definition.unicode-escape.end.bracket.curly.fstar'
       }
       {
-        'match': '\\\\(x[0-9A-Fa-f]{2}|[0-2][0-7]{0,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.)'
-        'name': 'constant.character.escape.fstar'
+        match: '\\\\(x[0-9A-Fa-f]{2}|[0-2][0-7]{0,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.)'
+        name: 'constant.character.escape.fstar'
       }
     ]
-  'op_names':
-    'patterns': [
+  op_names:
+    patterns: [
       {
-        'match': '\\bop(?:_(?:Multiply|Star|Slash|Percent|Plus|Substraction|Equals|Less|Greater|Bang|Dollar|Amp|Dot|Hat|Colon|Pipe|Question))+\\b'
-        'name': 'entity.name.tag.fstar'
+        match: '\\bop(?:_(?:Multiply|Star|Slash|Percent|Plus|Substraction|Equals|Less|Greater|Bang|Dollar|Amp|Dot|Hat|Colon|Pipe|Question))+\\b'
+        name: 'entity.name.tag.fstar'
       }
     ]
