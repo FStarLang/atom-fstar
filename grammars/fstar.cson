@@ -264,7 +264,7 @@ repository:
         begin: '`%'
         beginCaptures:
           0: name: 'punctuation.definition.opaque_reveal_spec.begin.fstar'
-        end: '\s'
+        end: '\\b'
         endCaptures:
           0: name: 'punctuation.definition.opaque_reveal_spec.end.fstar'
         name: 'string.quoted.template.fstar'
