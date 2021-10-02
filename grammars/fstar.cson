@@ -263,7 +263,7 @@ repository:
       {
         begin: '`%'
         beginCaptures:
-          0: name: 'punctuation.definition.opaque_reveal_spec.begin.fstar'
+          0: name: 'punctuation.definition.opaque-reveal-spec.begin.fstar'
         end: '\\b'
         endCaptures:
           0: name: 'punctuation.definition.opaque_reveal_spec.end.fstar'
