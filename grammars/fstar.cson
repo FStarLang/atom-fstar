@@ -266,7 +266,7 @@ repository:
           0: name: 'punctuation.definition.opaque-reveal-spec.begin.fstar'
         end: '\\b'
         endCaptures:
-          0: name: 'punctuation.definition.opaque_reveal_spec.end.fstar'
+          0: name: 'punctuation.definition.opaque-reveal-spec.end.fstar'
         name: 'string.quoted.template.fstar'
         patterns: [
           { include: '#op_names' }
