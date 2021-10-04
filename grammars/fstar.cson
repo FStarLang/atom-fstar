@@ -25,7 +25,7 @@ repository:
         name: 'support.class.base.fstar'
       }
       {
-        match: '(/\\\\|\\\\/|<:|<@|[(][|]|[|][)]|u#|~>|->|<--|<-|<==>|==>|[?][.]|[.]\\[|[.]\\(|[{][:]pattern|::|:=|;;|[!][{]|\\[[|]|[|]>|[|]\\]|[~+^&?$|#,.:;=\\[\\](){}-])'
+        match: '(/\\\\|\\\\/|<:|<@|[(][|]|[|][)]|u#|`|~>|->|<--|<-|<==>|==>|[?][.]|[.]\\[|[.]\\(|[{][:]pattern|::|:=|;;|[!][{]|\\[[|]|[|]>|[|]\\]|[~+^&?$|#,.:;=\\[\\](){}-])'
         name: 'support.class.base.fstar'
       }
       {
@@ -246,18 +246,6 @@ repository:
             match: '.{2,}'
             name: 'invalid.illegal.string.js'
           }
-        ]
-      }
-      {
-        begin: '`'
-        beginCaptures:
-          0: name: 'punctuation.definition.operator.begin.fstar'
-        end: '`'
-        endCaptures:
-          0: name: 'punctuation.definition.operator.end.fstar'
-        name: 'string.quoted.template.fstar'
-        patterns: [
-          { include: '#op_names' }
         ]
       }
     ]
